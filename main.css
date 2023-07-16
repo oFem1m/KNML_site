@@ -3,12 +3,15 @@
 }
 
 .content {
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 200px;
+    padding: 1rem;
+}
+.header-container {
+    background: linear-gradient(to right, #FF8C00, #FF00FF);
+    padding: 1rem;
 }
 
+
+/*
 .sidebar {
     position: fixed;
     top: 0;
@@ -20,3 +23,4 @@
     box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
     overflow-y: auto;
 }
+ */
