@@ -6,43 +6,28 @@ const model = [
             'text-align': 'center',
         }
         }},
-    {type: 'text', value: "It`s my first site!"},
-    {type: 'columns', value: [
-        '1', '2', '3'
-        ]},
-    {type: 'image', value: './assets/kotlin.jpg', options: {
+    {type: 'text', value: "KNML - библиотека на языке Kotlin<br>" +
+            "Содержит различные численные методы решения математических задач", options: {
+        tag: 'h2',
         styles: {
-            maxWidth: '225px', // Set the maximum width of the image
-            maxHeight: '225px', // Set the maximum height of the image
+            'text-align': 'center',
         }
         }}
 ]
 
 const $site = document.querySelector('#site')
-const $head = document.querySelector('#head')
+const $title = document.querySelector('#title')
 
 model.forEach(block =>{
     let html = ''
     if (block.type === 'title'){
         html = title(block)
-    } else if (block.type === 'image'){
-        html = image(block, css(block.options.styles))
-    }
-    $head.insertAdjacentHTML('beforeend', html)
-})
-
-/*
-model.forEach(block =>{
-    let html = ''
-    if (block.type === 'text'){
+        $title.insertAdjacentHTML('beforeend', html)
+    } else if (block.type === 'text'){
         html = text(block)
-    } else if (block.type === 'columns'){
-        html = columns(block)
+        $site.insertAdjacentHTML('beforeend', html)
     }
-    $site.insertAdjacentHTML('beforeend', html)
 })
-
- */
 
 
 //content
@@ -51,15 +36,8 @@ function title(block){
     return row(col(`<${tag}>${block.value}</${tag}>`), css(styles))
 }
 function text(block){
-    return row(col(`<p>${block.value}</p>`))
-}
-function columns(block){
-    const html = block.value.map(col).join('')
-    return row(html)
-}
-
-function image(block, styles=''){
-    return row(`<img style="${styles}" src="${block.value}" alt=""/>`)
+    const {tag='p', styles} = block.options
+    return row(col(`<${tag}>${block.value}</${tag}>`), css(styles))
 }
 
 

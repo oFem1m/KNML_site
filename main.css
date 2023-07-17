@@ -1,26 +1,94 @@
 #app {
     position: relative;
 }
+.header-container {
+    position: relative;
+    background: linear-gradient(to right, #F88909, #C757BC);
+    padding: 3rem;
+    height: 100px; /* Задайте желаемую высоту родительского контейнера */
+}
+
+.header {
+    position: absolute;
+    top: 50%; /* Перемещаем блок на 50% от верхней границы родительского контейнера */
+    left: 50%; /* Перемещаем блок на 50% от левой границы родительского контейнера */
+    transform: translate(-50%, -50%); /* Перемещаем блок обратно на половину своей ширины и высоты, чтобы он оказался посередине */
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+#checkbox {
+    display: none;
+}
+
+.toggle {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition-duration: .5s;
+}
+
+.bars {
+    width: 100%;
+    height: 4px;
+
+    background-color: #C757BC;
+    border-radius: 4px;
+}
+
+#bar2 {
+    transition-duration: .8s;
+}
+
+#bar1,#bar3 {
+    width: 70%;
+
+}
+
+#checkbox:checked + .toggle .bars {
+    position: absolute;
+    transition-duration: .5s;
+}
+
+#checkbox:checked + .toggle #bar2 {
+    transform: scaleX(0);
+    transition-duration: .5s;
+}
+
+#checkbox:checked + .toggle #bar1 {
+    width: 100%;
+    transform: rotate(45deg);
+    transition-duration: .5s;
+}
+
+#checkbox:checked + .toggle #bar3 {
+    width: 100%;
+    transform: rotate(-45deg);
+    transition-duration: .5s;
+}
+
+#checkbox:checked + .toggle {
+    transition-duration: .5s;
+    transform: rotate(180deg) translate(50%, 50%);
+}
+
+
+.kotlin-image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    max-height: 100px; /* Ограничиваем высоту картинки до высоты .header-container */
+}
 
 .content {
     padding: 1rem;
 }
-.header-container {
-    background: linear-gradient(to right, #FF8C00, #FF00FF);
-    padding: 1rem;
-}
 
-
-/*
-.sidebar {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    width: 200px;
-    z-index: 100;
-    padding: 10px;
-    box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
-    overflow-y: auto;
-}
- */
