@@ -1,5 +1,8 @@
 #app {
     position: relative;
+    background: #C73F57;
+    height: 100vh;
+    background: linear-gradient(to right, #F88909, #C757BC);
 }
 .header-container {
     position: relative;
@@ -80,7 +83,6 @@
     transform: rotate(180deg) translate(50%, 50%);
 }
 
-
 .kotlin-image {
     position: absolute;
     top: 0;
@@ -90,5 +92,11 @@
 
 .content {
     padding: 1rem;
+    height: 79vh;
+    justify-content: center;
+    margin: 0px 300px 50px 300px;
+    background: #E0FFFF;
+            /*#0095D5;*/
 }
+
 
